@@ -25,6 +25,8 @@ class AuthController {
 
     const token = jwt.sign({ id: user.id }, 'secret', { expiresIn: '1d' })
 
+    delete user.password
+
     return res.json({
       user,
       token

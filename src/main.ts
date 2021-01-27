@@ -1,13 +1,17 @@
 import 'reflect-metadata'
 
 import express from 'express'
+
 import './database/connect'
-import routes from './routes/users.routes'
+
+import routesUser from './routes/users.routes'
+import routesAuth from './routes/auth.routes'
 
 const app = express()
 
 app.use(express.json())
-app.use(routes)
+app.use(routesUser)
+app.use(routesAuth)
 
 app.listen(3333, () => {
   console.log('🚀 Server started at http://localhost:3333')
