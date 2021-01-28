@@ -9,8 +9,8 @@ export type AvailableRoleType = 'available' |'unavailable';
 
 @Entity('films')
 class Film {
-  @PrimaryGeneratedColumn('uuid')
-  id: Long;
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @ManyToOne(() => Director, director => director.films)
   director: Director;

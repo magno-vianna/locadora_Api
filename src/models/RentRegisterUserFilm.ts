@@ -4,8 +4,8 @@ import User from './User'
 
 @Entity('rent_registers_users_films')
 class RentRegisterUserFilm {
-  @PrimaryGeneratedColumn('uuid')
-  id: Long
+  @PrimaryGeneratedColumn()
+  id: number
 
   @ManyToMany(() => User, user => user.name)
   user: User;

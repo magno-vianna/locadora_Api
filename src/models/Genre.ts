@@ -1,11 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, Long, OneToMany } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'
 
 import Film from './Film'
 
 @Entity('genres')
 class Genre {
-  @PrimaryGeneratedColumn('uuid')
-  id: Long;
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Column()
   type: string;
