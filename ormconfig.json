@@ -11,6 +11,7 @@
    ],
    "migrations": [
       "src/migration/**/*.ts"
-   ]
+   ],
 
+   "logging": true
 }
