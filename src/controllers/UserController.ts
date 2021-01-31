@@ -32,12 +32,12 @@ class UserController {
   async findById (req: Request, res: Response) {
     const repository = getRepository(User)
 
-    const userId = req.params.id
+    const userId = parseInt(req.params.id)
 
-    const userFindId = await repository.findByIds(userId)
+    const userFindId = await repository.findOne({ id: userId })
 
-    if (userFindId.length === 0) {
-      return res.sendStatus(409)
+    if (!userFindId) {
+      return res.sendStatus(404)
     }
 
     return res.status(200).json(userFindId)
