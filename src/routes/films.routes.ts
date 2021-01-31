@@ -1,5 +1,5 @@
-import { Router } from 'express'
 
+import { Router } from 'express'
 import FilmController from '../controllers/FilmController'
 import authMiddleware from '../middlewares/authMiddleware'
 

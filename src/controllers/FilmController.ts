@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Request, Response } from 'express'
 import { getRepository } from 'typeorm'
+import FilmStatus from '../enums/FilmStatus'
 import Film from '../models/Film'
 
 class FilmController {
@@ -12,7 +13,7 @@ class FilmController {
       const findFilmName = await repository.find({ where: { title: filmName } })
       return res.json(findFilmName)
     } else {
-      const filmsAvailable = await repository.find({ where: { availability: 'available' } })
+      const filmsAvailable = await repository.find({ where: { availability: FilmStatus.available } })
 
       return res.json(filmsAvailable)
     }
