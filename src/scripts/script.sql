@@ -46,8 +46,8 @@ CREATE TABLE films
 CREATE TABLE rent_registers_users_films
   (
      id                INT auto_increment,
-     id_name_user      INT,
-     id_title          INT,
+     id_name_user      INT NULL,
+     id_title          INT NULL,
      lease_start_at    TIMESTAMP NULL,
      lease_end_at      TIMESTAMP NULL,
      film_delivered_at TIMESTAMP NULL,
