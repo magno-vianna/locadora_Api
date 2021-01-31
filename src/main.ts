@@ -6,6 +6,7 @@ import './database/connect'
 
 import routesUsers from './routes/users.routes'
 import routesAuths from './routes/auth.routes'
+import routesRents from './routes/rents.routes'
 import routesFilms from './routes/films.routes'
 
 const app = express()
@@ -14,6 +15,7 @@ app.use(express.json())
 
 app.use(routesUsers)
 app.use(routesAuths)
+app.use(routesRents)
 app.use(routesFilms)
 
 app.listen(3333, () => {
