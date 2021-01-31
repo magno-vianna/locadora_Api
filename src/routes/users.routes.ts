@@ -7,8 +7,8 @@ const router = Router()
 const userController = new UserController()
 
 router.post('/users', userController.create)
-router.get('/users', userController.index)
-router.get('/users/:id', userController.findById)
-router.delete('/users/:id', userController.delete)
+router.get('/users', authMiddleware, userController.index)
+router.get('/users/:id', authMiddleware, userController.findById)
+router.delete('/users/:id', authMiddleware, userController.delete)
 
 export default router
