@@ -42,6 +42,44 @@ class RentFilmController {
 
     return res.status(201).json(leaseFilm)
   }
-}
 
+  async devolution (req: Request, res: Response) {
+    const repositoryFilm = getRepository(Film)
+    const repository = getRepository(RentRegisterUserFilm)
+
+    interface TokenPayload{
+      id: number
+      iat: number
+      exp: number
+
+    }
+
+    const { authorization } = req.headers
+    const token = authorization.replace('Bearer', '').trim()
+    const user = jwt.decode(token)
+
+    const { id } = user as TokenPayload
+
+    const { title } = req.body
+
+    const availabilityFilm = await repositoryFilm.findByIds(title)
+
+    if (availabilityFilm[0].availability === FilmStatus.available) {
+      return res.sendStatus(409)
+    }
+
+    const userIdRent = await repository.findOne(id)
+    const filmIdRent = await repository.findOne(title)
+
+    if (!userIdRent && !filmIdRent) {
+      return res.sendStatus(409)
+    }
+
+    await repository.update(title, { filmDeliveredAt: Date() })
+
+    await repositoryFilm.update(title, { availability: FilmStatus.available })
+
+    return res.sendStatus(201)
+  }
+}
 export default RentFilmController

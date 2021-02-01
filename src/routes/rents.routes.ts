@@ -7,5 +7,6 @@ const router = Router()
 const rentFilmController = new RentFilmController()
 
 router.post('/rents', authMiddleware, rentFilmController.rent)
+router.post('/rents/devolutions', authMiddleware, rentFilmController.devolution)
 
 export default router
