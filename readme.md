@@ -3,7 +3,7 @@
 API para aluguel de Filmes:
 * Cadastro de Usuários, autenticação e gerenciamento.
 * Cadastro de Filmes e gerenciemento.
-* Gerenciemento de alugueis. Gerenciamenro
+* Gerenciemento de alugueis.
 
 Tecnologias utilizadas:
 * 🛠 Node.js
