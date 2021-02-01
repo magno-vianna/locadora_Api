@@ -18,8 +18,8 @@ INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) V
 INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (2, 5, 'Velocidade Máxima', 5.40, 1, 'available');
 INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (3, 2, 'A Jornada', 5.40, 6, 'available');
 INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (4, 1, 'Borat: Fita de Cinema Seguinte', 5.40, 3, 'available');
-INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (5, 4, 'Soul ', 5.40, 9, 'available');
-INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (6, 3, 'O Som do Silêncio', 5.40, 4, 'unavailable');
-INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (7, 1, 'Um Lindo Dia na Vizinhança', 5.40, 4, 'unavailable');
-INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (8, 1, 'Bad Boys Para Sempre', 5.40, 1, 'unavailable');
-INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (9, 2, 'Aves de Rapina', 5.40, 1, 'unavailable');
+INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (5, 4, 'Soul', 5.40, 9, 'available');
+INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (6, 3, 'O Som do Silêncio', 5.40, 4, 'available');
+INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (7, 1, 'Um Lindo Dia na Vizinhança', 5.40, 4, 'available');
+INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (8, 1, 'Bad Boys Para Sempre', 5.40, 1, 'available');
+INSERT INTO films (id, id_director, title, lease_cost, id_genre, availability) VALUES (9, 2, 'Aves de Rapina', 5.40, 1, 'available');

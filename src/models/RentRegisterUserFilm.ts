@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Long, CreateDateColumn, ManyToMany } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, ManyToMany, Column } from 'typeorm'
 import Film from './Film'
 import User from './User'
 
@@ -7,19 +7,25 @@ class RentRegisterUserFilm {
   @PrimaryGeneratedColumn()
   id: number
 
+  @Column({ name: 'id_name_user' })
+  idNameUser: number;
+
   @ManyToMany(() => User, user => user.name)
   user: User;
+
+  @Column({ name: 'id_title' })
+  idTitle: number;
 
   @ManyToMany(() => Film, film => film.title)
   title: Film;
 
-  @CreateDateColumn({ name: 'lease_start_at' })
+  @Column({ name: 'lease_start_at' })
   leaseStartAt: Date;
 
-  @CreateDateColumn({ name: 'lease_end_at' })
+  @Column({ name: 'lease_end_at' })
   leaseEndAt: Date;
 
-  @CreateDateColumn({ name: 'film_delivered_at' })
+  @Column({ name: 'film_delivered_at' })
   filmDeliveredAt: Date;
 }
 export default RentRegisterUserFilm

@@ -1,8 +1,6 @@
 /* eslint-disable camelcase */
-import { Entity, PrimaryGeneratedColumn, Column, Long, ManyToOne, ManyToMany } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm'
 
-import Director from './Director'
-import Genre from './Genre'
 import RentRegistersUsersFilms from './RentRegisterUserFilm'
 
 export type AvailableRoleType = 'available' |'unavailable';
@@ -12,8 +10,8 @@ class Film {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Director, director => director.films)
-  director: Director;
+  @Column()
+  id_director: number
 
   @Column()
   title: string;
@@ -27,8 +25,8 @@ class Film {
   })
   leaseCost: number;
 
-  @ManyToOne(() => Genre, genre => genre.films)
-  genre: Genre;
+  @Column()
+  id_genre: number
 
   @Column({
     type: 'enum',

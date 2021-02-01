@@ -1,6 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'
-
-import Film from './Film'
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
 @Entity('directors')
 class Director {
@@ -9,9 +7,6 @@ class Director {
 
   @Column()
   name: string;
-
-  @OneToMany(() => Film, film => film.director)
-  films: Film[];
 }
 
 export default Director
