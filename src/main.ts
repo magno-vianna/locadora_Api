@@ -1,8 +1,10 @@
 import 'reflect-metadata'
+import './database/connect'
 
 import express from 'express'
 
-import './database/connect'
+import swaggerUi from 'swagger-ui-express'
+import swaggerDocument from './docs/swagger'
 
 import routesUsers from './routes/users.routes'
 import routesAuths from './routes/auth.routes'
@@ -17,6 +19,8 @@ app.use(routesUsers)
 app.use(routesAuths)
 app.use(routesRents)
 app.use(routesFilms)
+
+app.use('/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 app.listen(3333, () => {
   console.log('🚀 Server started at http://localhost:3333')
