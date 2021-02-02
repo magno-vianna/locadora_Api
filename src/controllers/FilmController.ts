@@ -10,7 +10,12 @@ class FilmController {
 
     if (req.query.name) {
       const filmName = req.query.name
-      const findFilmName = await repository.find({ where: { title: filmName } })
+      const findFilmName = await repository.findOne({ where: { title: filmName } })
+
+      if (!findFilmName) {
+        return res.sendStatus(409)
+      }
+
       return res.json(findFilmName)
     } else {
       const filmsAvailable = await repository.find({ where: { availability: FilmStatus.available } })
