@@ -22,6 +22,6 @@ app.use(routesFilms)
 
 app.use('/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
-app.listen(3333, () => {
+app.listen(process.env.SERVER_PORT, () => {
   console.log('🚀 Server started at http://localhost:3333')
 })
