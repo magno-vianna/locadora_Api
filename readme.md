@@ -20,6 +20,9 @@ Requesitos:
 * Typescript - [Instalação Typescript Node.js 12](https://www.typescriptlang.org/): ```npm install -g typescript```.
 * Docker & Docker-Compose - [Instalação Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
+Documentação Swagger:
+* http://localhost:3333/v1/docs/
+
 Use o instalador do NPM para instalar as dependências.
 
 ```bash
