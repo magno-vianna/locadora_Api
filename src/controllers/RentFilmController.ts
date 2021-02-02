@@ -35,7 +35,7 @@ class RentFilmController {
     const rentDate = new Date()
     const rentEndDate = rentDate.setHours(rentDate.getHours() + 24)
 
-    const leaseFilm = repository.create({ idNameUser: id, idTitle: title, leaseStartAt: Date(), leaseEndAt: new Date(rentEndDate) })
+    const leaseFilm = repository.create({ idNameUser: id, idTitle: title, leaseStartAt: new Date(), leaseEndAt: new Date(rentEndDate) })
     await repository.save(leaseFilm)
 
     await repositoryFilm.update(title, { availability: FilmStatus.unavailable })
